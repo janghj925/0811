@@ -43,7 +43,7 @@ jobs:
             APP_DIR="/home/${{ secrets.AWS_USER }}/app"
 
             echo "===== Starting new app ====="
-            JAR_FILE=$(ls -t "$APP_DIR"/target/*.jar | head -n 1)
+            JAR_FILE=$(ls -t "$APP_DIR"/*.jar | head -n 1)
             if [ -z "$JAR_FILE" ]; then
               echo "ERROR: No JAR file found in $APP_DIR"
               exit 1
