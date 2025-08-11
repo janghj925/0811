@@ -42,6 +42,9 @@ jobs:
             set -euxo pipefail
             APP_DIR="/home/${{ secrets.AWS_USER }}/app"
 
+            echo "===== List files in $APP_DIR ====="
+            ls -l "$APP_DIR"
+
             echo "===== Starting new app ====="
             JAR_FILE=$(ls -t "$APP_DIR"/*.jar | head -n 1)
             if [ -z "$JAR_FILE" ]; then
