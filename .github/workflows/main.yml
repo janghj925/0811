@@ -20,6 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build JAR package
+        working-directory: ./0811
         run: mvn clean package -DskipTests
 
       - name: Upload JAR to EC2
